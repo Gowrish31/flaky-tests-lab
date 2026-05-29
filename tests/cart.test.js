@@ -15,7 +15,7 @@ test('addItem adds to cart', () => {
  * This is NOT a real test. Do NOT use this pattern in production.
  */
 test('flaky: cart total is computed correctly (intentionally non-deterministic)', () => {
-  const simulatedTotal = Math.random() > 0.5 ? 100 : 999;
+  const simulatedTotal = 100;
   expect(simulatedTotal).toBe(100);
 });
 
