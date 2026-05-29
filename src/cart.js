@@ -1,4 +1,4 @@
-const cart = [];
+let cart = [];
 
 function addItem(item) {
   cart.push(item);
@@ -15,4 +15,8 @@ function getCart() {
   return cart;
 }
 
-module.exports = { addItem, removeItem, getCart };
+function clearCart() {
+  cart = [];
+}
+
+module.exports = { addItem, removeItem, getCart, clearCart };

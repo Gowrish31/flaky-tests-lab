@@ -1,8 +1,22 @@
 const cart = require('../src/cart');
 
+beforeEach(() => {
+  cart.clearCart();
+});
+
 test('addItem adds to cart', () => {
   cart.addItem({ id: 1, name: 'Widget' });
   expect(cart.getCart().length).toBe(1);
+});
+
+/**
+ * INTENTIONALLY FLAKY TEST — for debugging/CI analysis demonstration.
+ * Uses Math.random() so ~50% of runs pass and ~50% fail.
+ * This is NOT a real test. Do NOT use this pattern in production.
+ */
+test('flaky: cart total is computed correctly (intentionally non-deterministic)', () => {
+  const simulatedTotal = Math.random() > 0.5 ? 100 : 999;
+  expect(simulatedTotal).toBe(100);
 });
 
 test('cart starts empty', () => {
